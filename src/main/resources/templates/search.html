@@ -38,6 +38,12 @@
 
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
 
+    <div>
+        <h3 th:if="${searchType}" th:text="@{'Search Results for ' + ${searchType} + ' : ' + ${searchTerm}}"></h3>
+
+        <div th:replace="fragments :: results-list"></div>
+    </div>
+
 </div>
 
 </body>
