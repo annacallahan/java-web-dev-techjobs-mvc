@@ -33,12 +33,27 @@
 
             <td th:each="item : ${job}">
                 <ul>
-                    <li th:text="@{'ID: ' + ${item.getName()}}"></li>
-                    <li th:text="@{'Name: ' + ${item.getName()}}"></li>
-                    <li th:text="@{'Employer: ' + ${item.getEmployer()}}"></li>
-                    <li th:text="@{'Location: ' + ${item.getLocation()}}"></li>
-                    <li th:text="@{'Position Type: ' + ${item.getPositionType()}}"></li>
-                    <li th:text="@{'Core Competency: ' + ${item.getCoreCompetency()}}"></li>
+
+                    <li style="color:blue">ID:
+                           <span style="color:black" th:text="${item.getId()}"></span>
+                    </li>
+                    <li style="color:blue">Name:
+                        <span style="color:black" th:text="${item.getName()}"></span>
+                    </li>
+                    <li style="color:blue">Employer:
+                        <a th:href="@{/list/jobs(column=employer,value=${item.getEmployer()})}" th:text="${item.getEmployer()}"></a>
+                    </li>
+                    <li style="color:blue">Location:
+                        <a th:href="@{/list/jobs(column=location,value=${item.getLocation()})}" th:text="${item.getLocation()}"></a>
+                    </li>
+                    <li style="color:blue">Position Type:
+                        <a th:href="@{/list/jobs(column=positionType,value=${item.getPositionType()})}" th:text="${item.getPositionType()}"></a>
+                    </li>
+                    <li style="color:blue">Skill:
+                        <a th:href="@{/list/jobs(column=coreCompetency,value=${item.getCoreCompetency()})}" th:text="${item.getCoreCompetency()}"></a>
+                    </li>
+
+
                 </ul>
             </td>
         </tr>
